@@ -23,7 +23,7 @@ class Program
 
         if (!Directory.Exists(folderPath))
         {
-            Console.WriteLine("❌ Directory not found.");
+            Console.WriteLine("Directory not found.");
             return;
         }
 
@@ -57,12 +57,14 @@ class Program
             string json = JsonSerializer.Serialize(fileList, new JsonSerializerOptions { WriteIndented = true });
             string outputPath = Path.Combine(folderPath, "scan_result.json");
             File.WriteAllText(outputPath, json);
-            Console.WriteLine($"\n📁 Results exported to: {outputPath}");
+            Console.WriteLine($"\n Results exported to: {outputPath}");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❗ Error: {ex.Message}");
+            Console.WriteLine($"Error: {ex.Message}");
         }
+
+        //test github
     }
 }
 
